@@ -26,7 +26,7 @@ class AppleXMLParser():
         root = tree.getroot()
         # open the file in the write mode
         header = ["startDate", "endDate", "sleepStage"]
-        with open('out/csv_log', 'w', encoding='UTF8', newline='') as f:
+        with open('out/log.csv', 'w', encoding='UTF8', newline='') as f:
             # create the csv writer
             writer = csv.writer(f)
             # write header
