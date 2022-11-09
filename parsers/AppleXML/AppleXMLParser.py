@@ -25,7 +25,7 @@ class AppleXMLParser():
         tree = ET.parse(self.xml_file)
         root = tree.getroot()
         # open the file in the write mode
-        header = ["startDate", "endDate", "sleepStage"]
+        header = ["caseId", "startDate", "endDate", "sleepStage"]
         with open('out/log.csv', 'w', encoding='UTF8', newline='') as f:
             # create the csv writer
             writer = csv.writer(f)
@@ -33,8 +33,12 @@ class AppleXMLParser():
             writer.writerow(header)
             for record in root.findall("Record"):
                 row = []
-                row.append(record.attrib["startDate"])
-                row.append(record.attrib["endDate"])
+                created_date = datetime.strptime(record.attrib["creationDate"], "%Y-%m-%d %H:%M:%S %z")
+                start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
+                end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
+                row.append(created_date.replace(tzinfo=None))
+                row.append(start_date.replace(tzinfo=None))
+                row.append(end_date.replace(tzinfo=None))
                 row.append(record.attrib["value"])
                 writer.writerow(row)
 
