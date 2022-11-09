@@ -25,7 +25,7 @@ class AppleXMLParser():
         tree = ET.parse(self.xml_file)
         root = tree.getroot()
         # open the file in the write mode
-        header = ["caseId", "startDate", "endDate", "sleepStage"]
+        header = ["caseId", "startDate", "endDate", "activity"]
         with open('out/log.csv', 'w', encoding='UTF8', newline='') as f:
             # create the csv writer
             writer = csv.writer(f)
@@ -33,17 +33,32 @@ class AppleXMLParser():
             writer.writerow(header)
             for record in root.findall("Record"):
                 row = []
-                created_date = datetime.strptime(record.attrib["creationDate"], "%Y-%m-%d %H:%M:%S %z")
-                start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
-                end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                row.append(created_date.replace(tzinfo=None))
-                row.append(start_date.replace(tzinfo=None))
-                row.append(end_date.replace(tzinfo=None))
-                row.append(record.attrib["value"])
-                writer.writerow(row)
+                activity = record.attrib["value"]
+                if (self.is_sleep_stage_valid(activity)):
+                    created_date = datetime.strptime(record.attrib["creationDate"], "%Y-%m-%d %H:%M:%S %z")
+                    start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
+                    end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
+                    row.append(created_date.replace(tzinfo=None))
+                    row.append(start_date.replace(tzinfo=None))
+                    row.append(end_date.replace(tzinfo=None))
+                    row.append(self.convert_apple_sleep_stage_to_text(activity))
+                    writer.writerow(row)
+                
 
-        
-        
+    def convert_apple_sleep_stage_to_text(self, stage):
+        if (stage == "HKCategoryValueSleepAnalysisAsleepCore"):
+            return "Core"
+        elif (stage == "HKCategoryValueSleepAnalysisAsleepREM"):
+            return "REM"
+        elif (stage == "HKCategoryValueSleepAnalysisAsleepDeep"):
+            return "Deep"
+        elif (stage == "HKCategoryValueSleepAnalysisAwake"):
+            return "Awake"
+        else:
+            return "Unknown"
+    
+    def is_sleep_stage_valid(self, stage):
+        return self.convert_apple_sleep_stage_to_text(stage) != "Unknown"
 
 if __name__ == "__main__":
     parser = AppleXMLParser("test.xml")
