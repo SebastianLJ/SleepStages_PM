@@ -5,7 +5,6 @@ sys.path.append(os.path.dirname(__file__))
 
 from json import dumps, loads
 import xml.etree.ElementTree as ET
-from xml.dom import minidom
 from datetime import datetime
 import csv
 
