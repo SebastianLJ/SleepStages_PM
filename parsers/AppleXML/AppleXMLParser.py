@@ -31,7 +31,7 @@ class AppleXMLParser():
                     created_date = datetime.strptime(record.attrib["creationDate"], "%Y-%m-%d %H:%M:%S %z")
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                    row.append(created_date.replace(tzinfo=None))
+                    row.append("AW-" + created_date.strftime("%Y-%m-%d"))
                     row.append(start_date.replace(tzinfo=None))
                     row.append(end_date.replace(tzinfo=None))
                     row.append(self.convert_apple_sleep_stage_to_text(activity))
