@@ -13,9 +13,11 @@ class AppleXMLParser():
         self.xml_file = open(filename, "r")
 
     def parse_to_xes(self):
-        self.tree = ET.parse(self.xml_file)
-        print(self.tree)
+        tree = ET.parse(self.xml_file)
+        root = tree.getroot()
+        for record in root.findall("Record"):
+            print(record.attrib)
 
-if __name__ == "main":
+if __name__ == "__main__":
     parser = AppleXMLParser("test.xml")
     parser.parse_to_xes()
