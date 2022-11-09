@@ -14,12 +14,6 @@ class AppleXMLParser():
         self.filename = filename
         self.xml_file = open(filename, "r")
 
-    def parse_to_xes(self):
-        tree = ET.parse(self.xml_file)
-        root = tree.getroot()
-        for record in root.findall("Record"):
-            print(record.attrib["value"])
-
     def parse_to_csv(self):
         # parse xml file
         tree = ET.parse(self.xml_file)
