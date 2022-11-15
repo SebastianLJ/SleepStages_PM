@@ -44,32 +44,32 @@ class AppleXMLParser():
                     writer.writerow(row)
                 
 
-    def convert_apple_sleep_stage_to_text(self, stage):
-        if (stage == "HKCategoryValueSleepAnalysisAsleepCore"):
-            self.core_count += 1
-            if (self.enumerate):
+    def convert_apple_sleep_stage_to_text(self, stage, verify=False):
+        if (stage == "HKCategoryValueSleepAnalysisAsleepCore"): 
+            if (self.enumerate) and not verify:
+                self.core_count += 1
                 return "Core " + str(self.core_count)
             return "Core"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepREM"):
-            self.REM_count += 1
-            if (self.enumerate):
+            if (self.enumerate and not verify):
+                self.REM_count += 1
                 return "REM " + str(self.REM_count)
             return "REM"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepDeep"):
-            self.deep_count += 1
-            if (self.enumerate):
+            if (self.enumerate and not verify):
+                self.deep_count += 1
                 return "Deep " + str(self.deep_count)
             return "Deep"
         elif (stage == "HKCategoryValueSleepAnalysisAwake"):
-            self.awake_count += 1
-            if (self.enumerate):
+            if (self.enumerate and not verify):
+                self.awake_count += 1
                 return "Awake " + str(self.awake_count)
             return "Awake"
         else:
             return "Unknown"
     
     def is_sleep_stage_valid(self, stage):
-        return self.convert_apple_sleep_stage_to_text(stage) != "Unknown"
+        return self.convert_apple_sleep_stage_to_text(stage, verify=True) != "Unknown"
 
 if __name__ == "__main__":
     parser = AppleXMLParser("test.xml", enumerate=True)
