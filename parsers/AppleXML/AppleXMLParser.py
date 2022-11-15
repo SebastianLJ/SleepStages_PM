@@ -19,13 +19,13 @@ class AppleXMLParser():
         self.deep_count = 0
         self.REM_count = 0
 
-    def parse_to_csv(self):
+    def parse_to_csv(self, output_filename="output.csv"):
         # parse xml file
         tree = ET.parse(self.xml_file)
         root = tree.getroot()
         # open the file in the write mode
         header = ["caseId", "startDate", "endDate", "activity"]
-        with open('out/log.csv', 'w', encoding='UTF8', newline='') as f:
+        with open('out/'+output_filename, 'w', encoding='UTF8', newline='') as f:
             # create the csv writer
             writer = csv.writer(f)
             # write header
@@ -72,5 +72,5 @@ class AppleXMLParser():
         return self.convert_apple_sleep_stage_to_text(stage) != "Unknown"
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("test_enumerated.xml", enumerate=True)
-    parser.parse_to_csv()
+    parser = AppleXMLParser("test.xml", enumerate=True)
+    parser.parse_to_csv("log_enumerated.csv")
