@@ -9,9 +9,15 @@ from datetime import datetime
 import csv
 
 class AppleXMLParser():
-    def __init__(self, filename):
+    def __init__(self, filename, enumerate=False):
         self.filename = filename
         self.xml_file = open(filename, "r")
+        self.enumerate = enumerate
+        
+        self.awake_count = 0
+        self.core_count = 0
+        self.deep_count = 0
+        self.REM_count = 0
 
     def parse_to_csv(self):
         # parse xml file
@@ -40,12 +46,24 @@ class AppleXMLParser():
 
     def convert_apple_sleep_stage_to_text(self, stage):
         if (stage == "HKCategoryValueSleepAnalysisAsleepCore"):
+            self.core_count += 1
+            if (self.enumerate):
+                return "Core " + str(self.core_count)
             return "Core"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepREM"):
+            self.REM_count += 1
+            if (self.enumerate):
+                return "REM " + str(self.REM_count)
             return "REM"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepDeep"):
+            self.deep_count += 1
+            if (self.enumerate):
+                return "Deep " + str(self.deep_count)
             return "Deep"
         elif (stage == "HKCategoryValueSleepAnalysisAwake"):
+            self.awake_count += 1
+            if (self.enumerate):
+                return "Awake " + str(self.awake_count)
             return "Awake"
         else:
             return "Unknown"
@@ -54,5 +72,5 @@ class AppleXMLParser():
         return self.convert_apple_sleep_stage_to_text(stage) != "Unknown"
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("test.xml")
+    parser = AppleXMLParser("test_enumerated.xml", enumerate=True)
     parser.parse_to_csv()
