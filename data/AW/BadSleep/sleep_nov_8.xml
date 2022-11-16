@@ -1,0 +1,102 @@
+<Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:06:02 +0100" endDate="2022-11-07 22:26:02 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:26:02 +0100" endDate="2022-11-07 22:27:02 +0100" value="HKCategoryValueSleepAnalysisAsleepDeep">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:27:02 +0100" endDate="2022-11-07 22:33:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:33:32 +0100" endDate="2022-11-07 22:36:02 +0100" value="HKCategoryValueSleepAnalysisAsleepDeep">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:36:02 +0100" endDate="2022-11-07 22:54:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:54:32 +0100" endDate="2022-11-07 22:55:02 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 22:55:02 +0100" endDate="2022-11-07 23:13:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 23:13:32 +0100" endDate="2022-11-07 23:14:32 +0100" value="HKCategoryValueSleepAnalysisAsleepREM">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 23:14:32 +0100" endDate="2022-11-07 23:42:02 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 23:42:02 +0100" endDate="2022-11-07 23:47:32 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-07 23:47:32 +0100" endDate="2022-11-08 00:00:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:00:32 +0100" endDate="2022-11-08 00:06:02 +0100" value="HKCategoryValueSleepAnalysisAsleepDeep">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:06:02 +0100" endDate="2022-11-08 00:12:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:12:32 +0100" endDate="2022-11-08 00:38:32 +0100" value="HKCategoryValueSleepAnalysisAsleepDeep">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:38:32 +0100" endDate="2022-11-08 00:45:02 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:45:02 +0100" endDate="2022-11-08 00:56:02 +0100" value="HKCategoryValueSleepAnalysisAsleepREM">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 00:56:02 +0100" endDate="2022-11-08 02:18:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 02:18:32 +0100" endDate="2022-11-08 02:19:02 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 02:19:02 +0100" endDate="2022-11-08 02:23:02 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 02:23:02 +0100" endDate="2022-11-08 03:07:32 +0100" value="HKCategoryValueSleepAnalysisAsleepREM">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 03:07:32 +0100" endDate="2022-11-08 04:08:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:08:32 +0100" endDate="2022-11-08 04:09:02 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:09:02 +0100" endDate="2022-11-08 04:14:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:14:32 +0100" endDate="2022-11-08 04:23:02 +0100" value="HKCategoryValueSleepAnalysisAsleepREM">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:23:02 +0100" endDate="2022-11-08 04:24:32 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:24:32 +0100" endDate="2022-11-08 04:31:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:31:32 +0100" endDate="2022-11-08 04:32:32 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 04:32:32 +0100" endDate="2022-11-08 05:16:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 05:16:32 +0100" endDate="2022-11-08 05:30:32 +0100" value="HKCategoryValueSleepAnalysisAsleepREM">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 05:30:32 +0100" endDate="2022-11-08 05:35:02 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 05:35:02 +0100" endDate="2022-11-08 05:37:02 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 05:37:02 +0100" endDate="2022-11-08 05:38:32 +0100" value="HKCategoryValueSleepAnalysisAwake">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian – Apple Watch" sourceVersion="9.1" creationDate="2022-11-08 06:00:34 +0100" startDate="2022-11-08 05:38:32 +0100" endDate="2022-11-08 06:00:32 +0100" value="HKCategoryValueSleepAnalysisAsleepCore">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
+ <Record type="HKCategoryTypeIdentifierSleepAnalysis" sourceName="Sebastian’s skrrtPhone" sourceVersion="16.0" creationDate="2022-11-08 06:00:33 +0100" startDate="2022-11-07 21:32:07 +0100" endDate="2022-11-08 06:00:32 +0100" value="HKCategoryValueSleepAnalysisInBed">
+  <MetadataEntry key="HKTimeZone" value="Europe/Copenhagen"/>
+ </Record>
