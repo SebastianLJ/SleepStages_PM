@@ -14,6 +14,10 @@ class AppleXMLParser():
         self.xml_file = open(filename, "r")
         self.enumerate = enumerate
         
+        self.reset_counters()
+        self.previous_case_id = None
+
+    def reset_counters(self):
         self.awake_count = 0
         self.core_count = 0
         self.deep_count = 0
@@ -35,6 +39,9 @@ class AppleXMLParser():
                 activity = record.attrib["value"]
                 if (self.is_sleep_stage_valid(activity)):
                     created_date = datetime.strptime(record.attrib["creationDate"], "%Y-%m-%d %H:%M:%S %z")
+                    if (self.previous_case_id != created_date):
+                        self.previous_case_id = created_date
+                        self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
                     row.append("AW-" + created_date.strftime("%Y-%m-%d"))
