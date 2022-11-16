@@ -75,7 +75,7 @@ class AppleXMLParser():
         return stage + " " + str(int(self.get_duration_interval(start_date, end_date).seconds/60)) + " min"
     
     def get_duration_interval(self, start_date, end_date):
-        delta = timedelta(minutes=10)
+        delta = timedelta(minutes=30)
         td = end_date - start_date
         return self.round_dt(end_date - start_date, delta)
     
@@ -99,5 +99,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False, duration=True)
-    parser.parse_to_csv("good_sleep_duration.csv")
+    parser = AppleXMLParser("full_bad_sleep.xml", enumerate=False, duration=True)
+    parser.parse_to_csv("bad_sleep_duration.csv")
