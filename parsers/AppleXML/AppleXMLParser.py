@@ -79,5 +79,5 @@ class AppleXMLParser():
         return self.convert_apple_sleep_stage_to_text(stage, verify=True) != "Unknown"
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("sleep_day_1-5.xml", enumerate=False)
-    parser.parse_to_csv("log5.csv")
+    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False)
+    parser.parse_to_csv("good_sleep.csv")
