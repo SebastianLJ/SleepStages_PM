@@ -5,14 +5,15 @@ sys.path.append(os.path.dirname(__file__))
 
 from json import dumps, loads
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timedelta
 import csv
 
 class AppleXMLParser():
-    def __init__(self, filename, enumerate=False):
+    def __init__(self, filename, enumerate=False, duration=False):
         self.filename = filename
         self.xml_file = open(filename, "r")
         self.enumerate = enumerate
+        self.duration = duration
         
         self.reset_counters()
         self.previous_case_id = None
@@ -44,33 +45,48 @@ class AppleXMLParser():
                         self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                    row.append("AW-" + created_date.strftime("%Y-%m-%d"))
-                    row.append(start_date.replace(tzinfo=None))
-                    row.append(end_date.replace(tzinfo=None))
-                    row.append(self.convert_apple_sleep_stage_to_text(activity))
-                    writer.writerow(row)
+                    if not self.duration or (self.get_duration_interval(start_date, end_date) > timedelta(minutes=0)):
+                        row.append("AW-" + created_date.strftime("%Y-%m-%d"))
+                        row.append(start_date.replace(tzinfo=None))
+                        row.append(end_date.replace(tzinfo=None))
+                        if (self.enumerate):
+                            row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
+                        elif (self.duration):
+                            row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
+                        else:
+                            row.append(self.convert_apple_sleep_stage_to_text(activity))
+                        writer.writerow(row)
                 
+    def enumerate_sleep_stages(self, stage):
+        if stage == "Core":
+            self.core_count += 1
+            return "Core " + str(self.core_count)
+        elif stage == "REM":
+            self.REM_count += 1
+            return "REM " + str(self.REM_count)
+        elif stage == "Deep":
+            self.deep_count += 1
+            return "Deep " + str(self.deep_count)
+        elif stage == "Awake":
+            self.awake_count += 1
+            return "Awake " + str(self.awake_count)
 
+    def duration_sleep_stages(self, stage, start_date, end_date):
+        return stage + " " + str(self.get_duration_interval(start_date, end_date))
+    
+    def get_duration_interval(self, start_date, end_date):
+        delta = timedelta(minutes=10)
+        td = end_date - start_date
+        return self.round_dt(end_date - start_date, delta)
+    
     def convert_apple_sleep_stage_to_text(self, stage, verify=False):
         if (stage == "HKCategoryValueSleepAnalysisAsleepCore"): 
-            if (self.enumerate) and not verify:
-                self.core_count += 1
-                return "Core " + str(self.core_count)
             return "Core"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepREM"):
-            if (self.enumerate and not verify):
-                self.REM_count += 1
-                return "REM " + str(self.REM_count)
             return "REM"
         elif (stage == "HKCategoryValueSleepAnalysisAsleepDeep"):
-            if (self.enumerate and not verify):
-                self.deep_count += 1
-                return "Deep " + str(self.deep_count)
             return "Deep"
         elif (stage == "HKCategoryValueSleepAnalysisAwake"):
-            if (self.enumerate and not verify):
-                self.awake_count += 1
-                return "Awake " + str(self.awake_count)
             return "Awake"
         else:
             return "Unknown"
@@ -78,6 +94,10 @@ class AppleXMLParser():
     def is_sleep_stage_valid(self, stage):
         return self.convert_apple_sleep_stage_to_text(stage, verify=True) != "Unknown"
 
+    # https://stephenallwright.com/python-round-time-15-minutes/
+    def round_dt(self, dt, delta):
+        return round((dt) / delta) * delta
+
 if __name__ == "__main__":
-    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False)
-    parser.parse_to_csv("good_sleep.csv")
+    parser = AppleXMLParser("full_bad_sleep.xml", enumerate=False, duration=True)
+    parser.parse_to_csv("bad_sleep_duration.csv")
