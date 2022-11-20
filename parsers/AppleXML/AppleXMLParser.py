@@ -45,17 +45,16 @@ class AppleXMLParser():
                         self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                    if not self.duration:
-                        row.append("AW-" + created_date.strftime("%Y-%m-%d"))
-                        row.append(start_date.replace(tzinfo=None))
-                        row.append(end_date.replace(tzinfo=None))
-                        if (self.enumerate):
-                            row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
-                        elif (self.duration):
-                            row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
-                        else:
-                            row.append(self.convert_apple_sleep_stage_to_text(activity))
-                        writer.writerow(row)
+                    row.append("AW-" + created_date.strftime("%Y-%m-%d"))
+                    row.append(start_date.replace(tzinfo=None))
+                    row.append(end_date.replace(tzinfo=None))
+                    if (self.enumerate):
+                        row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
+                    elif (self.duration):
+                        row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
+                    else:
+                        row.append(self.convert_apple_sleep_stage_to_text(activity))
+                    writer.writerow(row)
                 
     def enumerate_sleep_stages(self, stage):
         if stage == "Core":
