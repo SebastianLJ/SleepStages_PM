@@ -45,7 +45,7 @@ class AppleXMLParser():
                         self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                    if not self.duration or (self.get_duration_interval(start_date, end_date) > timedelta(minutes=0)):
+                    if not self.duration:
                         row.append("AW-" + created_date.strftime("%Y-%m-%d"))
                         row.append(start_date.replace(tzinfo=None))
                         row.append(end_date.replace(tzinfo=None))
@@ -75,8 +75,7 @@ class AppleXMLParser():
         return stage + " " + str(int(self.get_duration_interval(start_date, end_date).seconds/60)) + " min"
     
     def get_duration_interval(self, start_date, end_date):
-        delta = timedelta(minutes=30)
-        td = end_date - start_date
+        delta = timedelta(minutes=15)
         return self.round_dt(end_date - start_date, delta)
     
     def convert_apple_sleep_stage_to_text(self, stage, verify=False):
@@ -99,5 +98,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("full_bad_sleep.xml", enumerate=False, duration=True)
-    parser.parse_to_csv("bad_sleep_duration.csv")
+    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False, duration=True)
+    parser.parse_to_csv("good_sleep_duration_include_0.csv")
