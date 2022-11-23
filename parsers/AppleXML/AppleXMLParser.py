@@ -97,5 +97,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("worst_sleep.xml", enumerate=False, duration=True)
-    parser.parse_to_csv("worst_sleep.csv")
+    parser = AppleXMLParser("sleep_nov_6.xml", enumerate=True, duration=False)
+    parser.parse_to_csv("single_bad_sleep_enum.csv")
