@@ -45,8 +45,8 @@ class AppleXMLParser():
                         self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
-                    if self.get_duration_interval(start_date, end_date).seconds == 0:
-                        continue
+                    #if self.get_duration_interval(start_date, end_date).seconds == 0:
+                    #    continue
                     row.append("AW-" + created_date.strftime("%Y-%m-%d"))
                     row.append(start_date.replace(tzinfo=None))
                     row.append(end_date.replace(tzinfo=None))
@@ -99,5 +99,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("full_good_sleep.xml", enumerate=True, duration=False)
-    parser.parse_to_csv("fgs_enum.csv")
+    parser = AppleXMLParser("sleep_nov_5.xml", enumerate=False, duration=False)
+    parser.parse_to_csv("single_good_sleep_nov_5.csv")
