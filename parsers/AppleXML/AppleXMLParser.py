@@ -45,6 +45,8 @@ class AppleXMLParser():
                         self.reset_counters()
                     start_date = datetime.strptime(record.attrib["startDate"], "%Y-%m-%d %H:%M:%S %z")
                     end_date = datetime.strptime(record.attrib["endDate"], "%Y-%m-%d %H:%M:%S %z")
+                    if self.get_duration_interval(start_date, end_date).seconds == 0:
+                        continue
                     row.append("AW-" + created_date.strftime("%Y-%m-%d"))
                     row.append(start_date.replace(tzinfo=None))
                     row.append(end_date.replace(tzinfo=None))
@@ -52,7 +54,7 @@ class AppleXMLParser():
                         row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
                     elif (self.duration and self.get_duration_interval(start_date, end_date).seconds > 0):
                         row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
-                    else:
+                    elif (not self.enumerate and not self.duration):
                         row.append(self.convert_apple_sleep_stage_to_text(activity))
                     writer.writerow(row)
                 
@@ -74,7 +76,7 @@ class AppleXMLParser():
         return stage + " " + str(int(self.get_duration_interval(start_date, end_date).seconds/60)) + " min"
     
     def get_duration_interval(self, start_date, end_date):
-        delta = timedelta(minutes=20)
+        delta = timedelta(minutes=10)
         return self.round_dt(end_date - start_date, delta)
     
     def convert_apple_sleep_stage_to_text(self, stage, verify=False):
@@ -97,5 +99,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False, duration=True)
-    parser.parse_to_csv("fgs_dur.csv")
+    parser = AppleXMLParser("full_good_sleep.xml", enumerate=True, duration=False)
+    parser.parse_to_csv("fgs_enum.csv")
