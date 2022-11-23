@@ -50,7 +50,7 @@ class AppleXMLParser():
                     row.append(end_date.replace(tzinfo=None))
                     if (self.enumerate):
                         row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
-                    elif (self.duration):
+                    elif (self.duration and self.get_duration_interval(start_date, end_date).seconds > 0):
                         row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
                     else:
                         row.append(self.convert_apple_sleep_stage_to_text(activity))
@@ -74,7 +74,7 @@ class AppleXMLParser():
         return stage + " " + str(int(self.get_duration_interval(start_date, end_date).seconds/60)) + " min"
     
     def get_duration_interval(self, start_date, end_date):
-        delta = timedelta(minutes=15)
+        delta = timedelta(minutes=20)
         return self.round_dt(end_date - start_date, delta)
     
     def convert_apple_sleep_stage_to_text(self, stage, verify=False):
@@ -97,5 +97,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("sleep_nov_6.xml", enumerate=True, duration=False)
-    parser.parse_to_csv("single_bad_sleep_enum.csv")
+    parser = AppleXMLParser("full_good_sleep.xml", enumerate=False, duration=True)
+    parser.parse_to_csv("fgs_dur.csv")
