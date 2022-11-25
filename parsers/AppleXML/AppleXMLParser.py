@@ -99,5 +99,5 @@ class AppleXMLParser():
         return round((dt) / delta) * delta
 
 if __name__ == "__main__":
-    parser = AppleXMLParser("sleep_nov_5.xml", enumerate=False, duration=False)
-    parser.parse_to_csv("single_good_sleep_nov_5.csv")
+    parser = AppleXMLParser("sleep_nov_9.xml", enumerate=True, duration=False)
+    parser.parse_to_csv("single_good_sleep_nov_9_enum.csv")
