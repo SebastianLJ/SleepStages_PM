@@ -52,7 +52,7 @@ class AppleXMLParser():
                     row.append(end_date.replace(tzinfo=None))
                     if (self.enumerate):
                         row.append(self.enumerate_sleep_stages(self.convert_apple_sleep_stage_to_text(activity)))
-                    elif (self.duration and self.get_duration_interval(start_date, end_date).seconds > 0):
+                    elif (self.duration):
                         row.append(self.duration_sleep_stages(self.convert_apple_sleep_stage_to_text(activity), start_date, end_date))
                     elif (not self.enumerate and not self.duration):
                         row.append(self.convert_apple_sleep_stage_to_text(activity))
