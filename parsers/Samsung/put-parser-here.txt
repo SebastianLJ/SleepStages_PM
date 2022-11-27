@@ -15,7 +15,7 @@ def is_noise(row):
 
 
 def clean():
-    with open('samsung_log_cleaned.csv') as csvfile:
+    with open('samsung_log_raw.csv') as csvfile:
         reader = csv.reader(csvfile)
         data = list(reader)
         csv_titles = data[0]
@@ -69,7 +69,7 @@ def clean():
 
 
 def enumerated():
-    with open('samsung_log.csv') as csvfile:
+    with open('samsung_log_cleaned.csv') as csvfile:
         reader = csv.reader(csvfile)
         data = list(reader)
         csv_titles = data[0]
